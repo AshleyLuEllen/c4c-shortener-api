@@ -40,4 +40,7 @@ public class User {
     @Column(name = "salt")
     @JsonIgnore
     String salt;
+
+    @Column(name = "enabled")
+    boolean enabled;
 }

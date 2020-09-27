@@ -26,6 +26,9 @@ public class Link {
     @Column(name = "link_short_code")
     String shortCode;
 
+    @Column(name = "link_redirect_url")
+    String redirectURL;
+
     @JoinColumn(name = "link_owner", referencedColumnName = "user_id")
     @ManyToOne()
     User owner;

@@ -12,6 +12,8 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.servlet.view.RedirectView;
 
+import java.util.Optional;
+
 @Log4j2
 @RestController
 public class RedirectEndpoint {
@@ -30,11 +32,16 @@ public class RedirectEndpoint {
 
     @GetMapping("/{namespace}/{code}")
     public RedirectView getNamespacedLink(@PathVariable String namespace, @PathVariable String code) {
-        Link link = linkService.findLink(namespace, code)
-            .orElse(
-                linkService.findLink("special:Invalid Link Redirect", "invalid_link")
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Short link not found."))
-            );
-        return new RedirectView(link.getRedirectURL());
+        Optional<Link> link = linkService.findLink(namespace, code);
+        Link rawLink;
+
+        if (link.isEmpty() || !link.get().getEnabled()) {
+            rawLink = linkService.findLink("special:Invalid Link Redirect", "invalid_link")
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Short link not found."));
+        } else {
+            rawLink = link.get();
+        }
+
+        return new RedirectView(rawLink.getRedirectURL());
     }
 }

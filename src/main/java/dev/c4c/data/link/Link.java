@@ -39,4 +39,7 @@ public class Link {
 
     @Column(name = "link_expiry")
     ZonedDateTime expiry;
+
+    @Column(name = "enabled")
+    Boolean enabled;
 }

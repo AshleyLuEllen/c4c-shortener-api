@@ -1,4 +1,4 @@
-package dev.c4c.data;
+package dev.c4c.data.link;
 
 import java.io.Serializable;
 import java.util.Objects;

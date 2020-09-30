@@ -1,13 +1,12 @@
-package dev.c4c.service;
+package dev.c4c.data.link;
 
-import dev.c4c.data.Link;
-import dev.c4c.data.LinkId;
-import dev.c4c.data.User;
-import dev.c4c.repository.LinkRepository;
-import dev.c4c.repository.UserRepository;
+import dev.c4c.data.link.Link;
+import dev.c4c.data.link.LinkId;
+import dev.c4c.data.link.LinkRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -21,5 +20,9 @@ public class LinkService {
 
     public Link saveLink(Link link) {
         return linkRepository.save(link);
+    }
+
+    public List<Link> findAll() {
+        return linkRepository.findAll();
     }
 }

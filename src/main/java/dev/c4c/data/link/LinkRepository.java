@@ -1,8 +1,7 @@
-package dev.c4c.repository;
+package dev.c4c.data.link;
 
-import dev.c4c.data.Link;
-import dev.c4c.data.LinkId;
-import dev.c4c.data.User;
+import dev.c4c.data.link.Link;
+import dev.c4c.data.link.LinkId;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

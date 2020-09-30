@@ -1,7 +1,8 @@
-package dev.c4c.data;
+package dev.c4c.data.link;
 
 import javax.persistence.*;
 
+import dev.c4c.data.user.User;
 import lombok.Data;
 
 import java.time.ZonedDateTime;

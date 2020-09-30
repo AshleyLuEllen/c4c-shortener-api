@@ -11,3 +11,7 @@ INSERT INTO links (link_namespace, link_short_code, link_redirect_url, link_crea
 --INSERT INTO links (link_namespace, link_short_code, link_redirect_url, link_created, link_expiry, link_owner) VALUES ('reserved_globals:Resume Database', 'resumes', null, current_timestamp(), null, null);
 INSERT INTO links (link_namespace, link_short_code, link_redirect_url, link_created, link_expiry, link_owner) VALUES ('reserved_globals:Resume Database', 'links', null, current_timestamp(), null, null);
 INSERT INTO links (link_namespace, link_short_code, link_redirect_url, link_created, link_expiry, link_owner) VALUES ('reserved_globals:Resume Database', 'users', null, current_timestamp(), null, null);
+
+INSERT INTO links (link_namespace, link_short_code, link_redirect_url, link_created, link_expiry, link_owner) VALUES ('reserved_globals:Pings', 'ping', null, current_timestamp(), null, null);
+INSERT INTO links (link_namespace, link_short_code, link_redirect_url, link_created, link_expiry, link_owner) VALUES ('reserved_globals:Pings', 'memory-ping', null, current_timestamp(), null, null);
+INSERT INTO links (link_namespace, link_short_code, link_redirect_url, link_created, link_expiry, link_owner) VALUES ('reserved_globals:Pings', 'uptime', null, current_timestamp(), null, null);

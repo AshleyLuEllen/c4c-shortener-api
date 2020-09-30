@@ -1,8 +1,9 @@
-package dev.c4c.data;
+package dev.c4c.data.user;
 
 import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import dev.c4c.data.Role;
 import lombok.Data;
 
 @Data
@@ -34,12 +35,12 @@ public class User {
     Role role;
 
     @Column(name = "pass_hash")
-    @JsonIgnore
-    String password;
+//    @JsonIgnore
+    String passwordHash;
 
-    @Column(name = "salt")
-    @JsonIgnore
-    String salt;
+    @Transient
+//    @JsonIgnore
+    String password;
 
     @Column(name = "enabled")
     boolean enabled;

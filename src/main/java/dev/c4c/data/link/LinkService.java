@@ -25,4 +25,8 @@ public class LinkService {
     public List<Link> findAll() {
         return linkRepository.findAll();
     }
+
+    public void deleteLink(String namespace, String shortCode) {
+        linkRepository.deleteById(new LinkId(namespace, shortCode));
+    }
 }

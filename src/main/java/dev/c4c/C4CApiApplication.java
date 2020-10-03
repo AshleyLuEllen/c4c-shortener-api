@@ -25,7 +25,8 @@ public class C4CApiApplication {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                    .allowedOrigins(allowedOrigins)
+//                    .allowedOrigins("*")
+//                    .allowedOrigins(allowedOrigins)
                 ;
             }
         };
